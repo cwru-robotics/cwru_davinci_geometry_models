@@ -225,6 +225,12 @@
 					<mesh filename="package://cwru_davinci_geometry_models/meshes/psm/outer_insertion.dae"/>
 				</geometry>
 			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0.005 0.18 -0.0025"/>
+				<geometry>
+					<box size="0.04 0.5 0.08"/>
+				</geometry>
+			</collision>
 			<inertial>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<mass value="0.1"/>
@@ -257,6 +263,18 @@
 					<mesh filename="package://cwru_davinci_geometry_models/meshes/psm/tool_main.dae"/>			
 				</geometry>
 			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0.005 0 -0.01"/>
+				<geometry>
+					<box size="0.045 0.07 0.09"/>			
+				</geometry>
+			</collision>
+			<collision>
+				<origin rpy="0 0 0" xyz="0.00 0 0.2"/>
+				<geometry>
+					<box size="0.0075 0.0075 0.435"/>			
+				</geometry>
+			</collision>
 			<inertial>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
 				<mass value="0.1"/>
@@ -326,98 +344,65 @@
 
 		<transmission name="${prefix}tran1">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_yaw_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="outer_yaw">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor1">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 
 		<transmission name="${prefix}tran2">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="outer_pitch">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor2">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
-		<transmission name="${prefix}tran2_1">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint_1">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor2_1">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-		</transmission>	
-	
-		<transmission name="${prefix}tran2_2">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint_2">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor2_2">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-		</transmission>	
+		<gazebo>
+			<plugin name="mimic_1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>outer_pitch</joint>
+				<mimicJoint>outer_pitch_1</mimicJoint>
+			</plugin>
+			<plugin name="mimic_2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>outer_pitch</joint>
+				<mimicJoint>outer_pitch_2</mimicJoint>
+			</plugin>
+			<plugin name="mimic_3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>outer_pitch</joint>
+				<mimicJoint>outer_pitch_3</mimicJoint>
+				<multiplier>-1.0</multiplier>
+			</plugin>
+			<plugin name="mimic_4" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>outer_pitch</joint>
+				<mimicJoint>outer_pitch_4</mimicJoint>
+				<multiplier>-1.0</multiplier>
+			</plugin>
+			<plugin name="mimic_5" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>outer_pitch</joint>
+				<mimicJoint>outer_pitch_5</mimicJoint>
+			</plugin>
+		</gazebo>
 
-		<transmission name="${prefix}tran2_3">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint_3">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor2_3">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>-1</mechanicalReduction>
-			</actuator>
-		</transmission>	 
-
-		<transmission name="${prefix}tran2_4">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint_4">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor2_4">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>-1</mechanicalReduction>
-			</actuator>
-		</transmission>	
-	
-		<transmission name="${prefix}tran2_5">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_pitch_joint_5">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor2_5">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-		</transmission>	
 	
 		<transmission name="${prefix}tran3">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_insertion_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="outer_insertion">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor3">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 	
 		<transmission name="${prefix}tran4">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_roll_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="outer_roll">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor4">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>

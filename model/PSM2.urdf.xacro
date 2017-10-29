@@ -2,13 +2,13 @@
 <robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Macros -->
-  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.urdf.xacro"/>
+  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/PSM_generic.urdf.xacro"/>
 
   <link name="world"/>
-  <xacro:psm_sca
-      prefix="$(arg prefix)"
-      parent_link="world"
+  <xacro:psm_generic
+      prefix="PSM2"
       xyz="0.25 0.0 0.5" rpy="0.0 0.0 -3.1415926"
-      color="Yellow"/>
+      color="Yellow"
+  />
   
 </robot>
