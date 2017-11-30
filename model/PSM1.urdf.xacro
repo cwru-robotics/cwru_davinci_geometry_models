@@ -6,9 +6,17 @@
 
   <link name="world"/>
   <xacro:psm_sca
-      prefix="$(arg prefix)"
+      prefix="PSM1"
       parent_link="world"
       xyz="-0.25 0.0 0.5" rpy="0.0 0.0 3.1415926"
       color="Green"/>
+      
+  <!-- ros_control plugin -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/dvrk/PSM1</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+		</plugin>
+	</gazebo>
   
 </robot>

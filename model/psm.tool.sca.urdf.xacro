@@ -12,7 +12,7 @@
 			<child link="${prefix}tool_wrist_sca_link"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="-1.5708 -1.5708 0" xyz="0 0 0"/>
-			<limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
+			<limit lower="-1.5707" upper="1.5707" velocity="20" effort="1000"/>
 		</joint>
 	
 		<!-- link 5: tool_wrist_sca_link -->
@@ -49,7 +49,7 @@
 			<axis xyz="0 0 1"/>
 			<origin rpy="-1.5708 -1.5708 0" xyz="0.0091 0 0"/>
 			<!-- +/- 80 deg -->
-			<limit lower="-1.3963" upper="1.3963" velocity=".4" effort="1000"/>
+			<limit lower="-1.3963" upper="1.3963" velocity="10" effort="1000"/>
 		</joint>
 
 		<!-- link 6: tool_wrist_sca_shaft_link -->
@@ -73,17 +73,22 @@
 			<child link="${prefix}tool_wrist_sca_ee_link_0"/>			
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<limit lower="0" upper="1.5707" velocity=".4" effort="1000"/>
+			<limit lower="0" upper="1.5707" velocity="10" effort="1000"/>
 		</joint>
 
 		<!-- link 7-0: Outer open angle virtual -->
 		<link name="${prefix}tool_wrist_sca_ee_link_0">
-			<visual>
+			<!--visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>					
 					<box size="0 0 0" />
 				</geometry>
-			</visual>
+			</visual-->
+			<inertial>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<mass value="0.05"/>
+				<inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
+			</inertial>
 		</link>
 
 		<!-- joint 7-1: Outer open angle 1	-->
@@ -92,7 +97,7 @@
 			<child link="${prefix}tool_wrist_sca_ee_link_1"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
+			<limit lower="-1.5707" upper="1.5707" velocity="10" effort="1000"/>
 			<mimic joint="jaw" multiplier="0.5"/>
 		</joint>
 
@@ -117,7 +122,7 @@
 			<child link="${prefix}tool_wrist_sca_ee_link_2"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<limit lower="-1.5707" upper="1.5707" velocity=".4" effort="1000"/>
+			<limit lower="-1.5707" upper="1.5707" velocity="10" effort="1000"/>
 			<mimic joint="jaw" multiplier="-0.5"/>
 		</joint>
 
@@ -137,11 +142,11 @@
 		</link>
 
 		<!-- tool tip -->
-		<joint name="tool_tip" type="fixed">
+		<!--joint name="tool_tip" type="fixed">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_tip_link"/>
 			<origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
-		</joint>
+		</joint-->
 		
 		<link name="${prefix}fingertip2">
 			<visual>
@@ -233,10 +238,13 @@
 		
 
 		<!-- tool tip -->
-		<joint name="${prefix}tool_tip_joint_" type="fixed">
+		<!-- joint needs to be revolute (albeit immobile) to prevent Gazebo from optimizing the fiducial's position out.-->
+		<joint name="${prefix}tool_tip_joint_" type="revolute">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_tip_link"/>
 			<origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
+			<axis xyz="0 0 1"/>
+			<limit lower="-0.00001" upper="0.0001" velocity="10" effort="1000"/>
 		</joint>
 	    
 		<link name="${prefix}tool_tip_link">
@@ -247,6 +255,12 @@
 				</geometry>
 	
 			</visual>
+			<!--Needs a dummy inertia value to link with the joint up above.-->
+			<inertial>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<mass value="0.1"/>
+				<inertia ixx="0.00" ixy="0.0" ixz="0.0" iyy="0.00" iyz="0.0" izz="0.000"/>
+			</inertial>
 		</link>
 
 		<!--this colors the tool-tip fiducial red; oddly, this shows up in the camera view, but NOT in the rviz view -->
@@ -263,53 +277,51 @@
 		<gazebo>
 			<plugin name="${prefix}fingertip1_finger" filename="libsticky_fingers.so">
 				<capacity>25</capacity>
-				<link>davinci::${prefix}tool_wrist_sca_ee_link_1</link>
+				<link>davinci_${prefix}::${prefix}tool_wrist_sca_ee_link_1</link>
 			</plugin>
          	</gazebo>
 		
-		<transmission name="${prefix}tran5">
+		<transmission name="${prefix}_tran5">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_pitch_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>	
+			<joint name="outer_wrist_pitch">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
-			<actuator name="${prefix}motor5">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<actuator name="${prefix}_motor5">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
-		</transmission>	
+		</transmission>
 	
-		<transmission name="${prefix}tran6">
+		<transmission name="${prefix}_tran6">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_yaw_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>	
-			<actuator name="${prefix}motor6">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="outer_wrist_yaw">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="${prefix}_motor6">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 		
-		<transmission name="${prefix}tran7">
+		<transmission name="${prefix}_tran7">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_open_angle_joint">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<joint name="jaw">
+				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
-			<actuator name="${prefix}motor7">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			<actuator name="${prefix}_motor7">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
-	
-		<transmission name="${prefix}tran7_mimic">
-			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_open_angle_joint_mimic">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-			</joint>
-			<actuator name="${prefix}motor7_mimic">
-				<hardwareInterface>EffortJointInterface</hardwareInterface>
-				<mechanicalReduction>1</mechanicalReduction>
-			</actuator>
-		</transmission>
+		<gazebo>
+			<plugin name="mimic_6" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>jaw</joint>
+				<mimicJoint>jaw_mimic_1</mimicJoint>
+				<multiplier>0.5</multiplier>
+			</plugin>
+			<plugin name="mimic_7" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+				<joint>jaw</joint>
+				<mimicJoint>jaw_mimic_2</mimicJoint>
+				<multiplier>-0.5</multiplier>
+			</plugin>
+		</gazebo>
 	</xacro:macro>
 	
 </robot>

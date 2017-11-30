@@ -1,0 +1,1644 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+	<model name="dots_board_small">
+		<pose>0 0 0 0 0 0</pose>
+		<static>false</static>
+		<link name="body">
+			<visual name="dot_1_1">
+				<pose>0 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_2">
+				<pose>0 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_3">
+				<pose>0 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_4">
+				<pose>0 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_5">
+				<pose>0 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_6">
+				<pose>0 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_7">
+				<pose>0 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_8">
+				<pose>0 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_9">
+				<pose>0 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_10">
+				<pose>0 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_11">
+				<pose>0 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_1_12">
+				<pose>0 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_1">
+				<pose>0.005 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_2">
+				<pose>0.005 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_3">
+				<pose>0.005 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_4">
+				<pose>0.005 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_5">
+				<pose>0.005 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_6">
+				<pose>0.005 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_7">
+				<pose>0.005 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_8">
+				<pose>0.005 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_9">
+				<pose>0.005 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_10">
+				<pose>0.005 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_11">
+				<pose>0.005 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_2_12">
+				<pose>0.005 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_1">
+				<pose>0.01 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_2">
+				<pose>0.01 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_3">
+				<pose>0.01 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_4">
+				<pose>0.01 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_5">
+				<pose>0.01 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_6">
+				<pose>0.01 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_7">
+				<pose>0.01 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_8">
+				<pose>0.01 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_9">
+				<pose>0.01 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_10">
+				<pose>0.01 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_11">
+				<pose>0.01 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_3_12">
+				<pose>0.01 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_1">
+				<pose>0.015 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_2">
+				<pose>0.015 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_3">
+				<pose>0.015 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_4">
+				<pose>0.015 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_5">
+				<pose>0.015 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_6">
+				<pose>0.015 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_7">
+				<pose>0.015 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_8">
+				<pose>0.015 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_9">
+				<pose>0.015 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_10">
+				<pose>0.015 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_11">
+				<pose>0.015 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_4_12">
+				<pose>0.015 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_1">
+				<pose>0.02 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_2">
+				<pose>0.02 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_3">
+				<pose>0.02 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_4">
+				<pose>0.02 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_5">
+				<pose>0.02 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_6">
+				<pose>0.02 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_7">
+				<pose>0.02 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_8">
+				<pose>0.02 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_9">
+				<pose>0.02 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_10">
+				<pose>0.02 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_11">
+				<pose>0.02 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_5_12">
+				<pose>0.02 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_1">
+				<pose>0.025 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_2">
+				<pose>0.025 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_3">
+				<pose>0.025 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_4">
+				<pose>0.025 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_5">
+				<pose>0.025 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_6">
+				<pose>0.025 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_7">
+				<pose>0.025 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_8">
+				<pose>0.025 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_9">
+				<pose>0.025 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_10">
+				<pose>0.025 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_11">
+				<pose>0.025 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_6_12">
+				<pose>0.025 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_1">
+				<pose>0.03 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_2">
+				<pose>0.03 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_3">
+				<pose>0.03 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_4">
+				<pose>0.03 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_5">
+				<pose>0.03 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_6">
+				<pose>0.03 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_7">
+				<pose>0.03 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_8">
+				<pose>0.03 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_9">
+				<pose>0.03 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_10">
+				<pose>0.03 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_11">
+				<pose>0.03 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_7_12">
+				<pose>0.03 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_1">
+				<pose>0.035 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_2">
+				<pose>0.035 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_3">
+				<pose>0.035 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_4">
+				<pose>0.035 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_5">
+				<pose>0.035 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_6">
+				<pose>0.035 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_7">
+				<pose>0.035 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_8">
+				<pose>0.035 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_9">
+				<pose>0.035 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_10">
+				<pose>0.035 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_11">
+				<pose>0.035 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_8_12">
+				<pose>0.035 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_1">
+				<pose>0.04 0 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_2">
+				<pose>0.04 0.005 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_3">
+				<pose>0.04 0.01 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_4">
+				<pose>0.04 0.015 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_5">
+				<pose>0.04 0.02 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_6">
+				<pose>0.04 0.025 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_7">
+				<pose>0.04 0.03 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_8">
+				<pose>0.04 0.035 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_9">
+				<pose>0.04 0.04 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_10">
+				<pose>0.04 0.045 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_11">
+				<pose>0.04 0.05 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			<visual name="dot_9_12">
+				<pose>0.04 0.055 0.00025 0 0 0</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.00125</radius>
+						<length>0.0005</length>
+					</cylinder>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Black</name>
+					</script>
+				</material>
+			</visual>
+			
+			<visual name="white_bkg">
+				<pose>0 0 -0.00125 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.25 0.25 0.0025</size>
+					</box>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/White</name>
+					</script>
+				</material>
+			</visual>
+		</link>
+	  </model>
+</sdf>
