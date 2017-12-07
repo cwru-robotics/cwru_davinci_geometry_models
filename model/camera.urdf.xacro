@@ -1,14 +1,15 @@
 <?xml version="1.0" ?>
 <robot name="dvrk_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<!--TODO Sort out include properly-->
+	<link name="base"/>
 	<joint name="left_camera_joint" type="fixed">
-		<parent link="camera"/>
+		<parent link="base"/>
 		<child link="left_camera_link"/>
 		<origin rpy="0.0 1.5708 1.5708" xyz="0.005 0.00 0.5"/>
 	</joint>
 	<link name="left_camera_link">
 		<visual>
-			<origin xyz="0 0 0.0" rpy="0 0 0"/>
+			<origin xyz="0 0 0.02" rpy="0 0 0"/>
 			<geometry>
 				<box size="0.03 0.01 0.01"/>
 			</geometry>
@@ -22,13 +23,13 @@
 		</inertial>
 	</link>
 	<joint name="right_camera_joint" type="fixed">
-		<parent link="camera"/>
+		<parent link="base"/>
 		<child link="right_camera_link"/>
 		<origin rpy="0.0 1.5708 1.5708" xyz="-0.005 0.0 0.5"/>
 	</joint>
 	<link name="right_camera_link">
 		<visual>
-			<origin xyz="0 0 0.0" rpy="0 0 0"/>
+			<origin xyz="0 0 0.02" rpy="0 0 0"/>
 			<geometry>
 				<box size="0.03 0.01 0.01"/>
 			</geometry>
@@ -70,11 +71,11 @@
 			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 				<alwaysOn>true</alwaysOn>
 				<updateRate>0.0</updateRate>
-				<cameraName>/davinci_endo/right</cameraName>
+				<cameraName>/right</cameraName>
 				<imageTopicName>image_rect_color</imageTopicName>
 				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
 				<frameName>right_camera_link</frameName>
-				<hackBaseline>0.0</hackBaseline>
+				<hackBaseline>0.01</hackBaseline>
 				<distortionK1>0.0</distortionK1>
 				<distortionK2>0.0</distortionK2>
 				<distortionK3>0.0</distortionK3>
@@ -110,7 +111,7 @@
 			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 				<alwaysOn>true</alwaysOn>
 				<updateRate>0.0</updateRate>
-				<cameraName>/davinci_endo/left</cameraName>
+				<cameraName>/left</cameraName>
 				<imageTopicName>image_rect_color</imageTopicName>
 				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
 				<frameName>left_camera_optical_frame</frameName>
