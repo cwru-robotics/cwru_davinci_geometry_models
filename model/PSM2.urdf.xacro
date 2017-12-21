@@ -2,7 +2,7 @@
 <robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Macros -->
-  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.urdf.xacro"/>
+  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/PSM_generic.urdf.xacro"/>
 
   <link name="world"/>
   <xacro:psm_sca
