@@ -140,13 +140,6 @@
 				<inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
 			</inertial> 
 		</link>
-
-		<!-- tool tip -->
-		<!--joint name="tool_tip" type="fixed">
-			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
-			<child link="${prefix}tool_tip_link"/>
-			<origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
-		</joint-->
 		
 		<link name="${prefix}fingertip2">
 			<visual>
@@ -239,12 +232,10 @@
 
 		<!-- tool tip -->
 		<!-- joint needs to be revolute (albeit immobile) to prevent Gazebo from optimizing the fiducial's position out.-->
-		<joint name="${prefix}tool_tip_joint_" type="revolute">
+		<joint name="${prefix}tool_tip_joint_" type="fixed">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_tip_link"/>
 			<origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
-			<axis xyz="0 0 1"/>
-			<limit lower="-0.00001" upper="0.0001" velocity="10" effort="1000"/>
 		</joint>
 	    
 		<link name="${prefix}tool_tip_link">
@@ -253,12 +244,12 @@
 					<!-- put a fiducial, a sphere, at the tool tips -->
 					<sphere radius="0.001"/>
 				</geometry>
-	
+		
 			</visual>
 			<!--Needs a dummy inertia value to link with the joint up above.-->
 			<inertial>
 				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<mass value="0.1"/>
+				<mass value="0.00001"/>
 				<inertia ixx="0.00" ixy="0.0" ixz="0.0" iyy="0.00" iyz="0.0" izz="0.000"/>
 			</inertial>
 		</link>

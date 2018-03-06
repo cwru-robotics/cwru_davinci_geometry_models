@@ -9,9 +9,10 @@
       prefix="PSM1"
       parent_link="world"
       xyz="-0.25 0.0 0.5" rpy="0.0 0.0 3.1415926"
-      color="Green"/>
+      color="Green"
+/>
       
-  <!-- ros_control plugin -->
+	<!-- ros_control plugin -->
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
 			<robotNamespace>/dvrk/PSM1</robotNamespace>
