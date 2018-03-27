@@ -2,12 +2,12 @@
 <robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<!--This file contains different tool urdf -->
-	<xacro:include filename="$(find cwru_davinci_geometry_models)/model/common.urdf.xacro"/>
+	<!-- <xacro:include filename="$(find cwru_davinci_geometry_models)/model/common.urdf.xacro"/> -->
 
 	<!--sca-->
 	<xacro:macro name="psm_tool_sca" params="prefix">
 		<!-- joint 5: Outer wrist pitch joint -->
-		<joint name="outer_wrist_pitch" type="revolute">
+		<joint name="${prefix}outer_wrist_pitch" type="revolute">
 			<parent link="${prefix}tool_wrist_shaft_link"/>
 			<child link="${prefix}tool_wrist_sca_link"/>
 			<axis xyz="0 0 1"/>
@@ -38,12 +38,9 @@
 				<inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
 			</inertial>
 		</link>
-		<gazebo reference="${prefix}tool_wrist_sca_link">
-			
-		</gazebo>
 		
 		<!-- joint 6: Outer wrist yaw joint -->
-		<joint name="outer_wrist_yaw" type="revolute">
+		<joint name="${prefix}outer_wrist_yaw" type="revolute">
 			<parent link="${prefix}tool_wrist_sca_link"/>
 			<child link="${prefix}tool_wrist_sca_shaft_link"/>
 			<axis xyz="0 0 1"/>
@@ -57,7 +54,7 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 -0.0002 -0.0025"/>
 				<geometry>
-					<mesh filename="package://cwru_davinci_geometry_models/meshes/psm/tool_wrist_sca_shaft_link.dae"/> 
+					<mesh filename="package://cwru_davinci_geometry_models/meshes/psm/tool_wrist_sca_shaft_link.dae"/>
 				</geometry>
 			</visual>
 			<inertial>
@@ -68,7 +65,7 @@
 		</link>
 		
 		<!-- joint 7-0: Outer open angle 1	-->
-		<joint name="jaw" type="revolute">
+		<joint name="${prefix}jaw" type="revolute">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_wrist_sca_ee_link_0"/>			
 			<axis xyz="0 0 1"/>
@@ -92,13 +89,13 @@
 		</link>
 
 		<!-- joint 7-1: Outer open angle 1	-->
-		<joint name="jaw_mimic_1" type="revolute">
+		<joint name="${prefix}jaw_mimic_1" type="revolute">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_wrist_sca_ee_link_1"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<limit lower="-1.5707" upper="1.5707" velocity="10" effort="1000"/>
-			<mimic joint="jaw" multiplier="0.5"/>
+			<mimic joint="${prefix}jaw" multiplier="0.5"/>
 		</joint>
 
 		<!-- link 7-1: Outer open angle link 1 -->
@@ -117,13 +114,13 @@
 		</link>
 		
 		<!-- joint 7-2: Outer open angle 2	 -->
-		<joint name="jaw_mimic_2" type="revolute">
+		<joint name="${prefix}jaw_mimic_2" type="revolute">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_wrist_sca_ee_link_2"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<limit lower="-1.5707" upper="1.5707" velocity="10" effort="1000"/>
-			<mimic joint="jaw" multiplier="-0.5"/>
+			<mimic joint="${prefix}jaw" multiplier="-0.5"/>
 		</joint>
 
 		<!-- link 7-2: Outer open angle link 2 -->
@@ -141,101 +138,12 @@
 			</inertial> 
 		</link>
 		
-		<link name="${prefix}fingertip2">
-			<visual>
-				<origin rpy="0 0 0" xyz="0.001 0.005 0.0005"/>
-				<geometry>
-					<box size="0.002 0.01 0.004"/>
-				</geometry>
-			</visual>
-			<collision>
-				<origin rpy="0 0 0" xyz="0.001 0.005 0.0005"/>
-				<geometry>
-					<box size="0.002 0.01 0.004"/>
-				</geometry>
-				<surface>
-					<friction>
-						<ode>
-							<mu>30.0</mu>
-							<mu2>30.0</mu2>
-						</ode>
-					</friction>
-					<contact>
-						<ode>
-							<kp>1000000.0</kp>
-							<kd>100.0</kd>
-							<max_vel>1.0</max_vel>
-							<min_depth>0.001</min_depth>
-						</ode>
-					</contact>
-				</surface>
-			</collision>
-			<inertial>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<mass value="0.05"/>
-				<inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
-			</inertial> 
-		</link>
-		<!-- attach fingertip pad  -->
-		<joint name="${prefix}fingertip2_joint" type="fixed">
-			<parent link="${prefix}tool_wrist_sca_ee_link_2"/>
-			<child link="${prefix}fingertip2"/>
-			<axis xyz="0 0 1"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</joint>
-	
-		<!-- wsn: other fingertip -->
-		<link name="${prefix}fingertip1">
-			<visual>
-				<origin rpy="0 0 0" xyz="-0.001 0.005 0.0005"/>
-				<geometry>
-					<box size="0.002 0.01 0.004"/>
-				</geometry>
-			</visual>
-			<collision name="${prefix}fingertip1_collision">
-				<origin rpy="0 0 0" xyz="-0.001 0.005 0.0005"/>
-				<geometry>
-					<box size="0.002 0.01 0.004"/>
-				</geometry>
-				<surface>
-					<friction>
-						<ode>
-							<mu>30.0</mu>
-							<mu2>30.0</mu2>
-						</ode>
-					</friction>
-					<contact>
-						<ode>
-							<kp>1000000.0</kp>
-							<kd>100.0</kd>
-							<max_vel>1.0</max_vel>
-							<min_depth>0.001</min_depth>
-						</ode>
-					</contact>
-				</surface>
-			</collision>
-			<inertial>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<mass value="0.05"/>
-				<inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
-			</inertial>
-		</link>
-	
-		<!-- attach fingertip pad 1  -->
-		<joint name="${prefix}fingertip1_joint" type="fixed">
-			<parent link="${prefix}tool_wrist_sca_ee_link_1"/>
-			<child link="${prefix}fingertip1"/>
-			<axis xyz="0 0 1"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-		</joint>
-		
-
 		<!-- tool tip -->
 		<!-- joint needs to be revolute (albeit immobile) to prevent Gazebo from optimizing the fiducial's position out.-->
 		<joint name="${prefix}tool_tip_joint_" type="fixed">
 			<parent link="${prefix}tool_wrist_sca_shaft_link"/>
 			<child link="${prefix}tool_tip_link"/>
-			<origin rpy="0 ${PI/2} ${PI/2}" xyz="0 0.0102 0"/>
+			<origin rpy="0 ${pi/2} ${pi/2}" xyz="0 0.0102 0"/>
 		</joint>
 	    
 		<link name="${prefix}tool_tip_link">
@@ -244,7 +152,9 @@
 					<!-- put a fiducial, a sphere, at the tool tips -->
 					<sphere radius="0.001"/>
 				</geometry>
-		
+				<material name="green">
+						<color rgba="0 1.0 0 1.0"/>
+				</material>
 			</visual>
 			<!--Needs a dummy inertia value to link with the joint up above.-->
 			<inertial>
@@ -256,25 +166,28 @@
 
 		<!--this colors the tool-tip fiducial red; oddly, this shows up in the camera view, but NOT in the rviz view -->
 		<gazebo reference="${prefix}tool_tip_link">
-			<material>Gazebo/Red</material>
+			<material>Gazebo/Orange</material>
 		</gazebo>
 		
+		<gazebo reference="${prefix}tool_wrist_sca_link">
+		</gazebo>
+
 		<!--Color the sticky fingertips pink, for visibility-->
 		<gazebo reference="${prefix}fingertip1">
 			<material>Gazebo/Purple</material>
 		</gazebo>
 		
 		<!--Create the sticky fingertip.-->
-		<gazebo>
+<!-- 		<gazebo>
 			<plugin name="${prefix}fingertip1_finger" filename="libsticky_fingers.so">
 				<capacity>25</capacity>
 				<link>davinci_${prefix}::${prefix}tool_wrist_sca_ee_link_1</link>
 			</plugin>
-         	</gazebo>
+         	</gazebo> -->
 		
 		<transmission name="${prefix}_tran5">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_wrist_pitch">
+			<joint name="${prefix}outer_wrist_pitch">
 				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor5">
@@ -284,7 +197,7 @@
 	
 		<transmission name="${prefix}_tran6">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_wrist_yaw">
+			<joint name="${prefix}outer_wrist_yaw">
 				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor6">
@@ -294,7 +207,7 @@
 		
 		<transmission name="${prefix}_tran7">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="jaw">
+			<joint name="${prefix}jaw">
 				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor7">
@@ -303,13 +216,13 @@
 		</transmission>
 		<gazebo>
 			<plugin name="mimic_6" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>jaw</joint>
-				<mimicJoint>jaw_mimic_1</mimicJoint>
+				<joint>${prefix}jaw</joint>
+				<mimicJoint>${prefix}jaw_mimic_1</mimicJoint>
 				<multiplier>0.5</multiplier>
 			</plugin>
 			<plugin name="mimic_7" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>jaw</joint>
-				<mimicJoint>jaw_mimic_2</mimicJoint>
+				<joint>${prefix}jaw</joint>
+				<mimicJoint>${prefix}jaw_mimic_2</mimicJoint>
 				<multiplier>-0.5</multiplier>
 			</plugin>
 		</gazebo>
