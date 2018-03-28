@@ -187,8 +187,8 @@
 		
 		<transmission name="${prefix}_tran5">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_pitch">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="outer_wrist_pitch">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor5">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -197,8 +197,8 @@
 	
 		<transmission name="${prefix}_tran6">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}outer_wrist_yaw">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="outer_wrist_yaw">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor6">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -207,8 +207,8 @@
 		
 		<transmission name="${prefix}_tran7">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="${prefix}jaw">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="jaw">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}_motor7">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -216,13 +216,13 @@
 		</transmission>
 		<gazebo>
 			<plugin name="mimic_6" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>${prefix}jaw</joint>
-				<mimicJoint>${prefix}jaw_mimic_1</mimicJoint>
+				<joint>jaw</joint>
+				<mimicJoint>jaw_mimic_1</mimicJoint>
 				<multiplier>0.5</multiplier>
 			</plugin>
 			<plugin name="mimic_7" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>${prefix}jaw</joint>
-				<mimicJoint>${prefix}jaw_mimic_2</mimicJoint>
+				<joint>jaw</joint>
+				<mimicJoint>jaw_mimic_2</mimicJoint>
 				<multiplier>-0.5</multiplier>
 			</plugin>
 		</gazebo>
