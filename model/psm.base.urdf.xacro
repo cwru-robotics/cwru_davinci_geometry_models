@@ -6,7 +6,7 @@
 	<xacro:macro name="psm" params="prefix parent_link xyz rpy color">
 
 		<!-- fixed joint -->
-		<joint name="${prefix}_fixed_joint" type="fixed">
+		<joint name="${prefix}fixed_joint" type="fixed">
 			<parent link="${parent_link}"/>
 			<child link="${prefix}psm_base_link"/>
 			<origin rpy="${rpy}" xyz="${xyz}"/>
@@ -336,7 +336,7 @@
 
 		<transmission name="${prefix}tran2">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_pitch">
+			<joint name="${prefix}outer_pitch">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor2">
@@ -345,33 +345,33 @@
 		</transmission>
 		<gazebo>
 			<plugin name="mimic_1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_1</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_1</mimicJoint>
 			</plugin>
 			<plugin name="mimic_2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_2</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_2</mimicJoint>
 			</plugin>
 			<plugin name="mimic_3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_3</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_3</mimicJoint>
 				<multiplier>-1.0</multiplier>
 			</plugin>
 			<plugin name="mimic_4" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_4</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_4</mimicJoint>
 				<multiplier>-1.0</multiplier>
 			</plugin>
 			<plugin name="mimic_5" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_5</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_5</mimicJoint>
 			</plugin>
 		</gazebo>
 
 	
 		<transmission name="${prefix}tran3">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_insertion">
+			<joint name="${prefix}outer_insertion">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor3">
@@ -381,7 +381,7 @@
 	
 		<transmission name="${prefix}tran4">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_roll">
+			<joint name="${prefix}outer_roll">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor4">

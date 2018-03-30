@@ -185,44 +185,44 @@
 			</plugin>
          	</gazebo> -->
 		
-		<transmission name="${prefix}_tran5">
+		<transmission name="${prefix}tran5">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_wrist_pitch">
+			<joint name="${prefix}outer_wrist_pitch">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
-			<actuator name="${prefix}_motor5">
+			<actuator name="${prefix}motor5">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 	
-		<transmission name="${prefix}_tran6">
+		<transmission name="${prefix}tran6">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_wrist_yaw">
+			<joint name="${prefix}outer_wrist_yaw">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
-			<actuator name="${prefix}_motor6">
+			<actuator name="${prefix}motor6">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 		
-		<transmission name="${prefix}_tran7">
+		<transmission name="${prefix}tran7">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="jaw">
+			<joint name="${prefix}jaw">
 				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
-			<actuator name="${prefix}_motor7">
+			<actuator name="${prefix}motor7">
 				<mechanicalReduction>1</mechanicalReduction>
 			</actuator>
 		</transmission>
 		<gazebo>
 			<plugin name="mimic_6" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>jaw</joint>
-				<mimicJoint>jaw_mimic_1</mimicJoint>
+				<joint>${prefix}jaw</joint>
+				<mimicJoint>${prefix}jaw_mimic_1</mimicJoint>
 				<multiplier>0.5</multiplier>
 			</plugin>
 			<plugin name="mimic_7" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>jaw</joint>
-				<mimicJoint>jaw_mimic_2</mimicJoint>
+				<joint>${prefix}jaw</joint>
+				<mimicJoint>${prefix}jaw_mimic_2</mimicJoint>
 				<multiplier>-0.5</multiplier>
 			</plugin>
 		</gazebo>
