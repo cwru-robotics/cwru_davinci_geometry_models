@@ -6,7 +6,7 @@
 	<xacro:macro name="psm" params="prefix parent_link xyz rpy color">
 
 		<!-- fixed joint -->
-		<joint name="${prefix}_fixed_joint" type="fixed">
+		<joint name="${prefix}fixed_joint" type="fixed">
 			<parent link="${parent_link}"/>
 			<child link="${prefix}psm_base_link"/>
 			<origin rpy="${rpy}" xyz="${xyz}"/>
@@ -31,7 +31,7 @@
 		</link>
 		
 		<!-- joint 1 -->
-		<joint name="outer_yaw" type="revolute">
+		<joint name="${prefix}outer_yaw" type="revolute">
 			<parent link="${prefix}psm_base_link"/>
 			<child link="${prefix}outer_yaw_link"/>
 			<axis xyz="0 0 1"/>
@@ -64,7 +64,7 @@
 		<!-- link, all visual links mimic outer_pitch value -->
 		
 		<!-- joint 2: outer_pitch -->
-		<joint name="outer_pitch" type="revolute">
+		<joint name="${prefix}outer_pitch" type="revolute">
 			<parent link="${prefix}outer_yaw_link"/>
 			<child link="${prefix}outer_pitch_link"/>
 			<axis xyz="0 0 1"/>
@@ -88,14 +88,14 @@
 		
 		<!--wsn: for visualization links/joints of closed-chain mechanism, assign dynamic properties and control w/ fdbk-->
 		<!-- joint 2-1: outer_pitch_1 -->
-		<joint name="outer_pitch_1" type="continuous">
+		<joint name="${prefix}outer_pitch_1" type="continuous">
 			<parent link="${prefix}outer_yaw_link"/>
 			<child link="${prefix}outer_pitch_back_link"/>
 			<axis xyz="0 0 1"/>
 			<!-- <origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.1495"/> -->
 			<dynamics damping="1"/> 
 			<origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.5185"/>
-			<mimic joint="outer_pitch" multiplier="1"/>
+			<mimic joint="${prefix}outer_pitch" multiplier="1"/>
 			<limit lower="-0.7854" upper="0.7854" velocity="5.0" effort="1000"/>
 		</joint> 
 		
@@ -119,12 +119,12 @@
 		</link>
 
 		<!-- joint 2-2: outer_pitch_2 -->
-		<joint name="outer_pitch_2" type="continuous">
+		<joint name="${prefix}outer_pitch_2" type="continuous">
 			<parent link="${prefix}outer_yaw_link"/>
 			<child link="${prefix}outer_pitch_front_link"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="-1.5708 -1.5708 0" xyz="0 0.0295 0.4285"/>
-			<mimic joint="outer_pitch" multiplier="1"/>
+			<mimic joint="${prefix}outer_pitch" multiplier="1"/>
 		</joint>
 
 		<!-- link 2-2: outer_pitch_front -->
@@ -147,12 +147,12 @@
 		</link>
 
 		<!-- joint 2-3: outer_pitch_3 -->
-		<joint name="outer_pitch_3" type="continuous">
+		<joint name="${prefix}outer_pitch_3" type="continuous">
 			<parent link="${prefix}outer_pitch_back_link"/>
 			<child link="${prefix}outer_pitch_bottom_link"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0.04178 0.15007 -0.0137"/>
-			<mimic joint="outer_pitch" multiplier="-1"/>
+			<mimic joint="${prefix}outer_pitch" multiplier="-1"/>
 			<limit lower="-0.7854" upper="0.7854" velocity="5.0" effort="1000"/>
 			<dynamics damping="1"/> 
 		</joint>
@@ -177,12 +177,12 @@
 		</link>
 
 		<!-- joint 2-4: outer_pitch_4 -->
-		<joint name="outer_pitch_4" type="continuous">
+		<joint name="${prefix}outer_pitch_4" type="continuous">
 			<parent link="${prefix}outer_pitch_back_link"/>
 			<child link="${prefix}outer_pitch_top_link"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="0.04209 0.18695 -0.02412"/>
-			<mimic joint="outer_pitch" multiplier="-1"/>
+			<mimic joint="${prefix}outer_pitch" multiplier="-1"/>
 			<limit lower="-0.7854" upper="0.7854" velocity="5.0" effort="1000"/>
 			<dynamics damping="1"/> 
 		</joint>
@@ -207,12 +207,12 @@
 		</link>
 
 		<!-- joint 2-5: outer_pitch_5 -->
-		<joint name="outer_pitch_5" type="continuous">
+		<joint name="${prefix}outer_pitch_5" type="continuous">
 			<parent link="${prefix}outer_pitch_bottom_link"/>
 			<child link="${prefix}outer_insertion_link"/>
 			<axis xyz="0 0 1"/>
 			<origin rpy="0 0 0" xyz="-0.520 0 -0.0155"/>
-			<mimic joint="outer_pitch" multiplier="1"/>
+			<mimic joint="${prefix}outer_pitch" multiplier="1"/>
 			<limit lower="-0.7854" upper="0.7854" velocity="5.0" effort="1000"/>
 			<dynamics damping="1"/> 
 		</joint>
@@ -240,7 +240,7 @@
 		</gazebo>
 
 		<!-- joint 3: insertion -->
-		<joint name="outer_insertion" type="prismatic">
+		<joint name="${prefix}outer_insertion" type="prismatic">
 			<parent link="${prefix}outer_pitch_link"/>
 			<child link="${prefix}tool_main_link"/>
 			<axis xyz="0 0 1"/>
@@ -269,7 +269,7 @@
 		</link>
 		
 		<!-- joint 4: Outer Roll -->
-		<joint name="outer_roll" type="revolute">
+		<joint name="${prefix}outer_roll" type="revolute">
 			<parent link="${prefix}tool_main_link"/>
 			<child link="${prefix}tool_wrist_link"/>
 			<axis xyz="0 0 1"/>
@@ -326,8 +326,8 @@
 
 		<transmission name="${prefix}tran1">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_yaw">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="${prefix}outer_yaw">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor1">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -336,8 +336,8 @@
 
 		<transmission name="${prefix}tran2">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_pitch">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="${prefix}outer_pitch">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor2">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -345,34 +345,34 @@
 		</transmission>
 		<gazebo>
 			<plugin name="mimic_1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_1</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_1</mimicJoint>
 			</plugin>
 			<plugin name="mimic_2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_2</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_2</mimicJoint>
 			</plugin>
 			<plugin name="mimic_3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_3</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_3</mimicJoint>
 				<multiplier>-1.0</multiplier>
 			</plugin>
 			<plugin name="mimic_4" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_4</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_4</mimicJoint>
 				<multiplier>-1.0</multiplier>
 			</plugin>
 			<plugin name="mimic_5" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
-				<joint>outer_pitch</joint>
-				<mimicJoint>outer_pitch_5</mimicJoint>
+				<joint>${prefix}outer_pitch</joint>
+				<mimicJoint>${prefix}outer_pitch_5</mimicJoint>
 			</plugin>
 		</gazebo>
 
 	
 		<transmission name="${prefix}tran3">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_insertion">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="${prefix}outer_insertion">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor3">
 				<mechanicalReduction>1</mechanicalReduction>
@@ -381,8 +381,8 @@
 	
 		<transmission name="${prefix}tran4">
 			<type>transmission_interface/SimpleTransmission</type>
-			<joint name="outer_roll">
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<joint name="${prefix}outer_roll">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
 			</joint>
 			<actuator name="${prefix}motor4">
 				<mechanicalReduction>1</mechanicalReduction>

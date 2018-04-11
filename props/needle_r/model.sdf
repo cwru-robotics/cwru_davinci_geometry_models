@@ -18,7 +18,7 @@
         </inertia>
       </inertial>
     
-    <collision name="needle_end">
+    <collision name="needle_tip">
         <pose>-0.01175 0.002 0.0 0 0 -0.26</pose>
         <geometry>
           <box>
@@ -267,7 +267,7 @@
        </surface>
       </collision>
 
-    <collision name="needle_tip">
+    <collision name="needle_end">
         <pose>0.0117551 0.00163026 0 0 0 0.26</pose>
         <geometry>
           <box>
