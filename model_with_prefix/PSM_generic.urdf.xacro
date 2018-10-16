@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!-- PSM.urdf.xacro is already a file.-->
+<robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:property name="prefix" value="$(arg prefix)"/>
+	<xacro:property name="xyz" value="$(arg xyz)"/>
+	<xacro:property name="rpy" value="$(arg rpy)"/>
+	<xacro:property name="color" value="$(arg color)"/>
+	
+	<link name="world"/>
+
+	<!-- Macros -->
+	<xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.urdf.xacro"/>
+	
+		<xacro:psm_sca
+			prefix="${prefix}"
+			parent_link="world"
+			xyz="${xyz}"
+			rpy="${rpy}"
+			color="${color}"
+		/>
+	
+		<!-- ros_control plugin -->
+		<gazebo>
+			<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+				<robotNamespace>/dvrk/${prefix}</robotNamespace>
+				<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			</plugin>
+		</gazebo>
+</robot>

@@ -2,8 +2,8 @@
 <robot name="dvrk_psm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Macros -->
-  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.base.urdf.xacro"/>
-  <xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.tool.sca.urdf.xacro"/>
+  <xacro:include filename="$(find cwru_davinci_geometry_models)/model_with_prefix/psm.base.urdf.xacro"/>
+  <xacro:include filename="$(find cwru_davinci_geometry_models)/model_with_prefix/psm.tool.sca.urdf.xacro"/>
   <!-- <xacro:include filename="$(find cwru_davinci_geometry_models)/model/psm.tool.caudier.urdf.xacro"/> -->
 
   <!-- Macro for psm with sca -->

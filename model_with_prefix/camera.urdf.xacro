@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<robot name="dvrk_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<!--TODO Sort out include properly-->
+	<link name="base"/>
+	<joint name="left_camera_joint" type="fixed">
+		<parent link="base"/>
+		<child link="left_camera_link"/>
+		<origin rpy="0.0 1.5708 1.5708" xyz="0.005 0.00 0.5"/>
+	</joint>
+	<link name="left_camera_link">
+		<visual>
+			<origin xyz="0 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.03 0.01 0.01"/>
+			</geometry>
+			<material name="red"/>
+		</visual>
+
+		<inertial>
+			<mass value="1e-5" />
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+		</inertial>
+	</link>
+	<joint name="right_camera_joint" type="fixed">
+		<parent link="base"/>
+		<child link="right_camera_link"/>
+		<origin rpy="0.0 1.5708 1.5708" xyz="-0.005 0.0 0.5"/>
+	</joint>
+	<link name="right_camera_link">
+		<visual>
+			<origin xyz="0 0 0.02" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.03 0.01 0.01"/>
+			</geometry>
+			<material name="red"/>
+		</visual>
+
+		<inertial>
+			<mass value="1e-5" />
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+		</inertial>
+	</link>
+	
+	<!-- TODO: These camera parameters, while workable, do not accurately reflect the physical robot.-->
+	<!-- right camera -->
+	<gazebo reference="right_camera_link">
+		<sensor type="camera" name="right_camera">
+			<update_rate>30.0</update_rate>
+			<camera name="right_camera">
+				<horizontal_fov>0.9</horizontal_fov>
+				<image>
+					<width>640</width>
+					<height>480</height>
+					<format>R8G8B8</format>
+				</image>
+				<clip>
+					<near>0.005</near>
+					<far>0.9</far>
+				</clip>
+				<noise>	
+					<type>gaussian</type>
+					<!-- Noise is sampled independently per pixel on each frame.
+					That pixel's noise value is added to each of its color
+					channels, which at that point lie in the range [0,1]. -->
+					<mean>0.0</mean>
+					<stddev>0.007</stddev>
+				</noise>
+			</camera>
+			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+				<alwaysOn>true</alwaysOn>
+				<updateRate>0.0</updateRate>
+				<cameraName>/right</cameraName>
+				<imageTopicName>image_rect_color</imageTopicName>
+				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+				<frameName>right_camera_link</frameName>
+				<hackBaseline>0.01</hackBaseline>
+				<distortionK1>0.0</distortionK1>
+				<distortionK2>0.0</distortionK2>
+				<distortionK3>0.0</distortionK3>
+				<distortionT1>0.0</distortionT1>
+				<distortionT2>0.0</distortionT2>
+			</plugin>
+		</sensor>
+	</gazebo>
+	<!-- left camera -->
+	<gazebo reference="left_camera_link">
+		<sensor type="camera" name="left_camera">
+			<update_rate>30.0</update_rate>
+			<camera name="left_camera">
+				<horizontal_fov>0.9</horizontal_fov>
+				<image>
+					<width>640</width>
+					<height>480</height>
+					<format>R8G8B8</format>
+				</image>
+				<clip>
+					<near>0.005</near>
+					<far>0.9</far>
+				</clip>
+				<noise>
+					<type>gaussian</type>
+					<!-- Noise is sampled independently per pixel on each frame.
+					That pixel's noise value is added to each of its color
+					channels, which at that point lie in the range [0,1]. -->
+					<mean>0.0</mean>
+					<stddev>0.007</stddev>
+				</noise>
+			</camera>
+			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+				<alwaysOn>true</alwaysOn>
+				<updateRate>0.0</updateRate>
+				<cameraName>/left</cameraName>
+				<imageTopicName>image_rect_color</imageTopicName>
+				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+				<frameName>left_camera_optical_frame</frameName>
+				<!--frameName>left_camera_link</frameName-->
+				<hackBaseline>0.0</hackBaseline>
+				<distortionK1>0.0</distortionK1>
+				<distortionK2>0.0</distortionK2>
+				<distortionK3>0.0</distortionK3>
+				<distortionT1>0.0</distortionT1>
+				<distortionT2>0.0</distortionT2>
+			</plugin>
+		</sensor>
+	</gazebo>
+</robot>
